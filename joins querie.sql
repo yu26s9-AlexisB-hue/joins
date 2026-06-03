@@ -32,9 +32,18 @@ select products.productId, products.ProductName,
  
  */
  
+ /*
+ 
  select products.productName, categories.categoryName
  from products
  join categories on products.CategoryID = categories.categoryID
  where Products.unitPrice =
  (select max(unitPrice) from products);
  
+ */
+ 
+ select orders.orderId, orders.shipName,
+ orders.shipAddress, shippers.companyName
+ from orders
+ join shippers on orders.shipVia = shippers.ShipperID
+ where orders.ShipCountry = 'Germany';
