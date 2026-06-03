@@ -21,10 +21,20 @@ select products.productId, products.ProductName,
  
  */
  
+ /*
+ 
  select products.ProductID, products.ProductName,
  products.unitPrice, categories.CategoryName, suppliers.CompanyName
  from products
  join categories on products.CategoryID = categories.CategoryID
  join suppliers on products.SupplierID = suppliers.SupplierID
  order by productName;
+ 
+ */
+ 
+ select products.productName, categories.categoryName
+ from products
+ join categories on products.CategoryID = categories.categoryID
+ where Products.unitPrice =
+ (select max(unitPrice) from products);
  
