@@ -10,9 +10,21 @@ order by categoryName, productName;
 
 */
 
+/*
+
 select products.productId, products.ProductName,
- products.unitprice,suppliers.ContactName
+ products.unitprice,suppliers.CompanyName
  from products
  join suppliers on products.supplierID = suppliers.SupplierID
  where UnitPrice > 75
  order by ProductName;
+ 
+ */
+ 
+ select products.ProductID, products.ProductName,
+ products.unitPrice, categories.CategoryName, suppliers.CompanyName
+ from products
+ join categories on products.CategoryID = categories.CategoryID
+ join suppliers on products.SupplierID = suppliers.SupplierID
+ order by productName;
+ 
